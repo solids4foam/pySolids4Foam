@@ -8,5 +8,11 @@ Requirements:
 - petsc4py
 I installed these using conda but you it can be done in others, like using pip.
 
+# Running
+The scripts can be run in serial, e.g.
+- `python finiteDifference2dPETSc.py`
+or in parallel, e.g.
+- `mpiexec -n 4 python finiteDifference2dPETSc.py`
+
 # Contact
 philip.cardiff@ucd.ie

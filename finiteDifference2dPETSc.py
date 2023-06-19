@@ -10,7 +10,7 @@ def index_to_grid(r):
 
 # User parameters
 n = 1000 # number of rows
-nnz = 5*n # number of non-zeros
+nnz = 5 # estimate of the number of non-zeros per row
 h = 1.0 / (n + 1) # mesh spacing
 
 #
@@ -40,8 +40,8 @@ A.setType(PETSc.Mat.Type.AIJ)
 # Allow matrix options set from options file
 A.setFromOptions()
 
-# Allocate non-zeros
-A.setPreallocationNNZ(5)
+# Estimate the number of nonzeros to be expected on each row
+A.setPreallocationNNZ(nnz)
 
 # Insert coefficients]
 start_time = time.time()
